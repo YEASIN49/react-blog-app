@@ -1,0 +1,73 @@
+@import './variables.scss'; 
+
+*{
+	margin: 0;
+	padding: 0;  
+	text-decoration: none;
+}
+
+nav{
+	// background-color: $font-cartBlue;	
+	background-color: $color-lightPurple;	
+	color: $color-lightGray;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	font-family: $font-varela;
+}
+nav div{
+	
+	// font-weight: 600;
+}
+.logo{
+	font-family: $font-monoton;
+	font-size: x-large;
+}
+nav div span{
+	color: rgb(9, 9, 27);
+	// font-size: large;
+	font-weight: bold;
+}
+.navLeft, .navRight{
+	flex: 3;
+	text-align: center;
+	
+	// background-color: brown;
+}
+.navRight{
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.navCenter{
+	flex: 6;
+	font-weight: bold;
+	font-size: small;
+	background-color: rebeccapurple;
+	// width: 100%;
+	// margin: 0 auto;
+	text-align: center;
+	
+}
+.navLinks{
+	margin: 0 10px;
+	color: $color-lightGray;
+	// text-decoration: none;
+	transition: 0.2s;
+	&:hover{
+		color: $color-title;
+		transition: 0.2s;
+	}
+}
+.profileImage{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin: 8px 10px;
+}
+.searchIcon{
+	// font-weight: 300;
+	color: $color-lightGray;
+	cursor: pointer;
+}
