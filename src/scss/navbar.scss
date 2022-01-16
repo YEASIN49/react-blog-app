@@ -96,9 +96,6 @@ nav div span{
 		height: 0;
 		padding-top: 0;
 		border-top: none;
-		// width: 100%;
-		// margin: 0 auto;
-		// text-align: center;
 	}
 }
 .navLinks{
@@ -140,6 +137,21 @@ nav div span{
 		top: -200vh;
 	}
 }
+.closeModalBtn{
+	display: none;
+	@include md{
+		display: block;
+		cursor: pointer;
+		color: $color-lightPurple;
+		position: absolute;
+		top: 60%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		padding: 5px 15px;
+		font-weight: bold;
+		border-radius: 5px;
+	}
+}
 .profileImage{
 	width: 40px;
 	height: 40px;
@@ -150,17 +162,14 @@ nav div span{
 	position: static;
 	transform: translate(0%,0%);
 	transition: 0.5s;
+	border-radius: 10px;
 	@include md{
+		background-color: $color-lightGray;
+		padding: 30px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%,-50%);
-		// display: flex;
-		// align-content: center;
-		// &:hover .searchInputField{
-			// padding: 5px;
-			// width: 100px;
-		// }
 	}
 }
 .searchInputField{
@@ -173,17 +182,6 @@ nav div span{
 	background-color: #19171a;
 	color: $color-lightGray;
 	transition: 0.5s;
-	@include md{
-		// position: relative;
-		// z-index: 9;
-		// width: 0;
-		// padding: 0;
-		// &:hover{
-			// padding: 5px 10px;
-			// width: 260px;
-		// }
-	}
-	
 }
 .searchButton{
 	position: absolute;
@@ -193,9 +191,9 @@ nav div span{
     border: none;
 	cursor: pointer;
 	@include md{
-		// position: static;
-		top: 2%;
-		right: 0%;
+		color: $color-lightGray;
+		top: 34%;
+		right: 8%;
 	}
 }
 .searchIcon{
@@ -267,7 +265,7 @@ nav div span{
 		transition: all 0.5s ease;
 		margin: 5px 0 5px 65px;
 		@include sm{
-			// margin: 5px 8vw;
+			margin: 5px 8vw;
 		}
 	  }
 	  .hamburger-btn-close .line1 {

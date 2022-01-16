@@ -191,6 +191,26 @@ nav div span {
   }
 }
 
+.closeModalBtn {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .closeModalBtn {
+    display: block;
+    cursor: pointer;
+    color: rebeccapurple;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+}
+
 .profileImage {
   width: 40px;
   height: 40px;
@@ -204,10 +224,13 @@ nav div span {
           transform: translate(0%, 0%);
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  border-radius: 10px;
 }
 
 @media (min-width: 768px) {
   .searchForm {
+    background-color: #EDF5E0;
+    padding: 30px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -240,8 +263,9 @@ nav div span {
 
 @media (min-width: 768px) {
   .searchButton {
-    top: 2%;
-    right: 0%;
+    color: #EDF5E0;
+    top: 34%;
+    right: 8%;
   }
 }
 
@@ -321,6 +345,14 @@ nav div span {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   margin: 5px 0 5px 65px;
+}
+
+@media (min-width: 480px) {
+  .burgerpng .line1,
+  .line2,
+  .line3 {
+    margin: 5px 8vw;
+  }
 }
 
 .hamburger-btn-close .line1 {

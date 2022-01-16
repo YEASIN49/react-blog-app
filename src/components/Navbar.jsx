@@ -16,11 +16,12 @@ const Navbar = ({ isBurgerBtnOpen, toggleSearchModal, isSearchModalOpen, toggleB
 				<a href='' className='navLinks'>LOGOUT</a>
 			</div>
 			<div className={isBurgerBtnOpen ? 'navRight' : 'navRight navClosed'}>
-				<div onClick={toggleSearchModal} className={isSearchModalOpen ? 'modalContainer' : 'modalContainer modalClose'}>
+				<div className={isSearchModalOpen ? 'modalContainer' : 'modalContainer modalClose'}>
 					<form action="" className='searchForm'>
 						<input type="text" className='searchInputField' placeholder="Search.." name="search" />
 						<button type="submit" className='searchButton'><span className="material-icons searchIcon">search</span></button>
 					</form>
+					<button className='closeModalBtn' onClick={toggleSearchModal}>Close</button>
 				</div>
 				<button onClick={toggleSearchModal} className='searchButtonToggler'><span className="material-icons">search</span></button>
 				<img className='profileImage' src={profileImage} />

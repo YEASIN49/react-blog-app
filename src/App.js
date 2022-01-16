@@ -10,7 +10,8 @@ function App() {
     const burgerButtonPrevState = isBurgerBtnOpen;
     setIsBurgerBtnOpen(!burgerButtonPrevState);
   }
-  const toggleSearchModal = () => {
+  const toggleSearchModal = (e) => {
+    e.preventDefault();
     const searchModalPrevState = isSearchModalOpen;
     setIsSearchModalOpen(!searchModalPrevState);
   }
