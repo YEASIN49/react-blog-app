@@ -1,19 +1,24 @@
-@import './variables.scss'; 
+@import './variables'; 
+@import './partials/breakpoints';
 
 *{
 	margin: 0;
 	padding: 0;  
 	text-decoration: none;
+	box-sizing: border-box;
 }
 
-nav{
+.navItemContainer{
 	// background-color: $font-cartBlue;	
 	background-color: $color-lightPurple;	
 	color: $color-lightGray;
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
+	justify-content: space-between;
 	font-family: $font-varela;
+	position: relative;
+	z-index: 99;
 }
 nav div{
 	
@@ -22,6 +27,8 @@ nav div{
 .logo{
 	font-family: $font-monoton;
 	font-size: x-large;
+	padding: 5px 5px 5px 30px;
+	// width: 150px;
 }
 nav div span{
 	color: rgb(9, 9, 27);
@@ -29,35 +36,108 @@ nav div span{
 	font-weight: bold;
 }
 .navLeft, .navRight{
-	flex: 3;
+	// flex: ;
 	text-align: center;
-	
+	@include md {
+			flex: 3;
+	}
 	// background-color: brown;
 }
 .navRight{
+	position: absolute;
+	top: 150px;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	font-weight: bold;
 	display: flex;
+	flex-direction: column-reverse;
 	align-items: center;
 	justify-content: center;
+	transition: 0.8s;
+	@include md{
+		position: static;
+		flex-direction: row;
+		transform: translate(0,0);
+	}
+	
+}
+.navOpen{
+	top: 368px;
+	border-radius: 0px;
+	width: 100%;
+}
+.navClosed{
+	top: -200vh;
+	width: 5%;
+	border-radius: 999px;
+
 }
 .navCenter{
-	flex: 6;
-	font-weight: bold;
-	font-size: small;
-	background-color: rebeccapurple;
+	transform: translate(-50%, -50%);
 	// width: 100%;
-	// margin: 0 auto;
-	text-align: center;
-	
+	height: 100vh;
+	position: absolute;
+	left: 50%;
+	border-top: 3px solid $color-cartOrange;
+	padding-top: 200px;
+	background-color: $color-title;
+	transition: top 0.5s, border-radius 1.2s, width 1.5s;
+	// transition: 0.8s;
+	@include md{
+		position: static;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transform: translate(0,0);
+		flex: 6;
+		font-weight: bold;
+		font-size: small;
+		background-color: rebeccapurple;
+		height: 0;
+		padding-top: 0;
+		border-top: none;
+		// width: 100%;
+		// margin: 0 auto;
+		// text-align: center;
+	}
 }
 .navLinks{
 	margin: 0 10px;
+	padding: 10px 0;
 	color: $color-lightGray;
+	// color: black;
+	display: block;
+	text-align: center;
 	// text-decoration: none;
 	transition: 0.2s;
 	&:hover{
-		color: $color-title;
+		color: black;
 		transition: 0.2s;
+	}
+	@include md{
+		padding: 0;
+		display: inline-block;
+	}
+}
+.modalContainer{
+	position: static;
+	transition: 0.5s;
+	@include md{
+		transition: 0.5s;
+		position: absolute;
+		// display: none;
+		z-index: 1000;
+		top: 0;
+		right: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.562);
+	}
+}
+.modalClose{
+	transition: 0.5s;
+	@include md{
+		top: -200vh;
 	}
 }
 .profileImage{
@@ -66,8 +146,138 @@ nav div span{
 	border-radius: 50%;
 	margin: 8px 10px;
 }
-.searchIcon{
-	// font-weight: 300;
-	color: $color-lightGray;
-	cursor: pointer;
+.searchForm{
+	position: static;
+	transform: translate(0%,0%);
+	transition: 0.5s;
+	@include md{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		// display: flex;
+		// align-content: center;
+		// &:hover .searchInputField{
+			// padding: 5px;
+			// width: 100px;
+		// }
+	}
 }
+.searchInputField{
+	border: none;
+	border-radius: 20px;
+	padding: 5px 10px;
+	width: 260px;
+	max-width: 85vw;
+	height: 30px;
+	background-color: #19171a;
+	color: $color-lightGray;
+	transition: 0.5s;
+	@include md{
+		// position: relative;
+		// z-index: 9;
+		// width: 0;
+		// padding: 0;
+		// &:hover{
+			// padding: 5px 10px;
+			// width: 260px;
+		// }
+	}
+	
+}
+.searchButton{
+	position: absolute;
+	top: 15%;
+	right: 2%;
+    background: none;
+    border: none;
+	cursor: pointer;
+	@include md{
+		// position: static;
+		top: 2%;
+		right: 0%;
+	}
+}
+.searchIcon{
+	cursor: pointer;
+	text-align: center;
+	color: $color-lightGray;
+	@include md{
+		color: $color-title;
+		background-color: $color-body;
+		padding: 5px 4px 4px 6px;
+		border-radius: 50%;
+		font-size: 20px;
+	}
+}
+.searchButtonToggler{
+	display: none;
+	@include md{
+		display: block;
+		height: 30px;
+		width: 30px;
+		background-color: $color-lightGray;
+		padding-top: 5px;
+		padding-left: 2px;
+		border-radius: 50%;
+		border: none;
+		cursor: pointer;
+	}
+		&:hover span,&:hover{
+			background-color: $color-title;
+			color: $color-lightGray;
+		}
+// 		&:hover .searchInputField{
+// 				padding: 5px 10px;
+// 				width: 260px;
+// 		}
+// 	}
+}
+.searchButtonToggler span{
+	color: $color-title;
+	font-size: 22px;
+	
+}
+
+
+// @include md {
+	.burgerButtonContainer{
+		// position: relative;
+		display: block;
+		flex: 3;
+		@include md{
+			display: none;
+		}
+	}
+	
+	.burgerpng {
+		position: absolute;
+		width: 120px;
+		top: 50%;
+		right: 0%;
+		transform: translate(-5%, -50%);
+		transform: translate(-5%, -50%);
+	  }
+	  .burgerpng .line1,
+	  .line2,
+	  .line3 {
+		background-color: aliceblue;
+		width: 28px;
+		height: 3px;
+		transition: all 0.5s ease;
+		margin: 5px 0 5px 65px;
+		@include sm{
+			// margin: 5px 8vw;
+		}
+	  }
+	  .hamburger-btn-close .line1 {
+		transform: rotate(-45deg) translate(-5px, 6px);
+	  }
+	  .hamburger-btn-close .line2 {
+		width: 0;
+	  }
+	  .hamburger-btn-close .line3 {
+		transform: rotate(45deg) translate(-5px, -6px);
+	  }
+
+// }
