@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from "./components/Navbar";
+import Homepage from './pages/Homepage';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         toggleSearchModal={toggleSearchModal}
         toggleBurgerBtn={toggleBurgerBtn}
       />
+      <Homepage />
     </div>
   );
 }

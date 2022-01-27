@@ -7,8 +7,17 @@
 }
 
 .navItemContainer {
-  background-color: rebeccapurple;
-  color: #EDF5E0;
+  -webkit-box-shadow: 1px 1px 5px #45456b6c;
+          box-shadow: 1px 1px 5px #45456b6c;
+  width: 100%;
+  font-family: "Varela Round", sans-serif;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+}
+
+.allNavItem {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,19 +31,19 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-family: "Varela Round", sans-serif;
-  position: relative;
-  z-index: 99;
 }
 
 .logo {
-  font-family: "Monoton", cursive;
-  font-size: x-large;
+  font-family: "Londrina Outline", cursive;
+  font-size: 36px;
+  font-weight: bold;
+  color: #303036;
   padding: 5px 5px 5px 30px;
 }
 
 nav div span {
-  color: #09091b;
+  font-size: 36px;
+  color: rgba(255, 255, 255, 0.699);
   font-weight: bold;
 }
 
@@ -106,7 +115,7 @@ nav div span {
   left: 50%;
   border-top: 3px solid #F45D45;
   padding-top: 200px;
-  background-color: #242425;
+  background-color: #FCE8A1;
   -webkit-transition: top 0.5s, border-radius 1.2s, width 1.5s;
   transition: top 0.5s, border-radius 1.2s, width 1.5s;
 }
@@ -139,16 +148,18 @@ nav div span {
 
 .navLinks {
   margin: 0 10px;
-  padding: 10px 0;
-  color: #EDF5E0;
+  padding: 8px 0;
+  color: #45456b;
+  font-size: 14px;
   display: block;
   text-align: center;
+  font-weight: bold;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
 .navLinks:hover {
-  color: black;
+  color: #F45D45;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -216,6 +227,7 @@ nav div span {
   height: 40px;
   border-radius: 50%;
   margin: 8px 10px;
+  outline: 3px solid #05396B;
 }
 
 .searchForm {
@@ -229,7 +241,7 @@ nav div span {
 
 @media (min-width: 768px) {
   .searchForm {
-    background-color: #EDF5E0;
+    background-color: #FFFFFF;
     padding: 30px;
     position: absolute;
     top: 50%;
@@ -277,7 +289,7 @@ nav div span {
 
 @media (min-width: 768px) {
   .searchIcon {
-    color: #242425;
+    color: #45456b;
     background-color: #FFFFFF;
     padding: 5px 4px 4px 6px;
     border-radius: 50%;
@@ -294,22 +306,22 @@ nav div span {
     display: block;
     height: 30px;
     width: 30px;
-    background-color: #EDF5E0;
     padding-top: 5px;
     padding-left: 2px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
+    background-color: #45456b;
   }
 }
 
 .searchButtonToggler:hover span, .searchButtonToggler:hover {
-  background-color: #242425;
-  color: #EDF5E0;
+  background-color: #EDF5E0;
+  color: #45456b;
 }
 
 .searchButtonToggler span {
-  color: #242425;
+  color: #EDF5E0;
   font-size: 22px;
 }
 
@@ -318,6 +330,7 @@ nav div span {
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
+  width: 120px;
 }
 
 @media (min-width: 768px) {
@@ -327,8 +340,9 @@ nav div span {
 }
 
 .burgerpng {
+  cursor: pointer;
   position: absolute;
-  width: 120px;
+  margin: 0 6vw;
   top: 50%;
   right: 0%;
   -webkit-transform: translate(-5%, -50%);
@@ -339,9 +353,9 @@ nav div span {
 .burgerpng .line1,
 .line2,
 .line3 {
-  background-color: aliceblue;
+  background-color: #45456b;
   width: 28px;
-  height: 3px;
+  height: 4px;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   margin: 5px 0 5px 65px;
@@ -351,7 +365,7 @@ nav div span {
   .burgerpng .line1,
   .line2,
   .line3 {
-    margin: 5px 8vw;
+    margin: 5px 0;
   }
 }
 
