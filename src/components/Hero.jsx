@@ -7,27 +7,37 @@ export default function Hero() {
 
 	const [viewportSize, setViewportSize] = useState(document.body.clientWidth);
 	const imgSrc = useRef(null);
-	console.log(document.body.clientWidth + "clw");
-	console.log(imgSrc.current + "img");
+	// console.log(document.body.clientWidth + "clw");
+	// console.log(imgSrc.current + "img");
 
 
 	useEffect(() => {
-		console.log("entered");
+		// console.log("entered");
 		if (document.body.clientWidth > 500) {
-			console.log("entered if");
+			// console.log("entered if");
 			imgSrc.current.setAttribute("src", heroMd);
 		} else {
-			console.log("entered else");
-			console.log(document.getElementById('test'));
+			// console.log("entered else");
+			// console.log(document.getElementById('test'));
 			document.getElementById('test').setAttribute("src", heroSm);
 		}
 	}, [viewportSize]);
 
+	useEffect(() => {
+		// window.onresize = viewportChangeHandler;
+		window.addEventListener("resize", viewportChangeHandler);
+		// console.log("===> added")
+		return () => {
+			// console.log("cleaned");
+			window.removeEventListener("resize", viewportChangeHandler);
+		}
+
+	});
+
 	const viewportChangeHandler = () => {
-		console.log("called")
+		// console.log("called")
 		setViewportSize(document.body.clientWidth);
 	}
-	window.onresize = viewportChangeHandler;
 
 
 	return (
