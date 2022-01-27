@@ -1,4 +1,5 @@
-@import './variables'; 
+@import './partials/variables'; 
+@import './partials/reusable';
 @import './partials/breakpoints';
 
 *{
@@ -10,28 +11,40 @@
 
 .navItemContainer{
 	// background-color: $font-cartBlue;	
-	background-color: $color-lightPurple;	
-	color: $color-lightGray;
+	// background-color: $color-lightPurple;	
+	// color: $color-lightGray;
+	box-shadow: 1px 1px 5px #45456b6c;
+	width: 100%;
+	font-family: $font-varela;
+	position: absolute;
+	top: 0;
+	z-index: 99;
+}
+.allNavItem{
+	@include relative;
+	// position: relative;
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
 	justify-content: space-between;
-	font-family: $font-varela;
-	position: relative;
-	z-index: 99;
 }
 nav div{
 	
 	// font-weight: 600;
 }
 .logo{
-	font-family: $font-monoton;
-	font-size: x-large;
+	// font-family: $font-monoton;
+	font-family: $font-londrina;
+	// font-size: x-large;
+	font-size: 36px;
+	font-weight: bold;
+	color: rgb(48, 48, 54);
 	padding: 5px 5px 5px 30px;
-	// width: 150px;
 }
 nav div span{
-	color: rgb(9, 9, 27);
+	font-size: 36px;
+	color: rgba(255, 255, 255, 0.699);
+	// color: rgb(48, 48, 54);
 	// font-size: large;
 	font-weight: bold;
 }
@@ -80,7 +93,8 @@ nav div span{
 	left: 50%;
 	border-top: 3px solid $color-cartOrange;
 	padding-top: 200px;
-	background-color: $color-title;
+	// background-color: $color-title;
+	background-color: $color-lightBrown;
 	transition: top 0.5s, border-radius 1.2s, width 1.5s;
 	// transition: 0.8s;
 	@include md{
@@ -100,15 +114,17 @@ nav div span{
 }
 .navLinks{
 	margin: 0 10px;
-	padding: 10px 0;
-	color: $color-lightGray;
+	padding: 8px 0;
+	color: $color-title;
+	font-size: 14px;
 	// color: black;
 	display: block;
 	text-align: center;
+	font-weight: bold;
 	// text-decoration: none;
 	transition: 0.2s;
 	&:hover{
-		color: black;
+		color: $color-cartOrange;
 		transition: 0.2s;
 	}
 	@include md{
@@ -157,6 +173,7 @@ nav div span{
 	height: 40px;
 	border-radius: 50%;
 	margin: 8px 10px;
+	outline: 3px solid $color-darkBlue;
 }
 .searchForm{
 	position: static;
@@ -164,7 +181,7 @@ nav div span{
 	transition: 0.5s;
 	border-radius: 10px;
 	@include md{
-		background-color: $color-lightGray;
+		background-color: $color-body;
 		padding: 30px;
 		position: absolute;
 		top: 50%;
@@ -214,16 +231,17 @@ nav div span{
 		display: block;
 		height: 30px;
 		width: 30px;
-		background-color: $color-lightGray;
 		padding-top: 5px;
 		padding-left: 2px;
 		border-radius: 50%;
 		border: none;
 		cursor: pointer;
+		background-color: $color-title;
+		// color: $color-lightGray;
 	}
-		&:hover span,&:hover{
-			background-color: $color-title;
-			color: $color-lightGray;
+	&:hover span,&:hover{
+			background-color: $color-lightGray;
+			color: $color-title;
 		}
 // 		&:hover .searchInputField{
 // 				padding: 5px 10px;
@@ -232,7 +250,7 @@ nav div span{
 // 	}
 }
 .searchButtonToggler span{
-	color: $color-title;
+	color: $color-lightGray;
 	font-size: 22px;
 	
 }
@@ -243,14 +261,16 @@ nav div span{
 		// position: relative;
 		display: block;
 		flex: 3;
+		width: 120px;
 		@include md{
 			display: none;
 		}
 	}
 	
 	.burgerpng {
+		cursor: pointer;
 		position: absolute;
-		width: 120px;
+		margin: 0 6vw;
 		top: 50%;
 		right: 0%;
 		transform: translate(-5%, -50%);
@@ -259,23 +279,26 @@ nav div span{
 	  .burgerpng .line1,
 	  .line2,
 	  .line3 {
-		background-color: aliceblue;
+		background-color: $color-title;
 		width: 28px;
-		height: 3px;
+		height: 4px;
 		transition: all 0.5s ease;
 		margin: 5px 0 5px 65px;
 		@include sm{
-			margin: 5px 8vw;
+			margin: 5px 0;
 		}
 	  }
 	  .hamburger-btn-close .line1 {
 		transform: rotate(-45deg) translate(-5px, 6px);
-	  }
-	  .hamburger-btn-close .line2 {
+		// background-color: $color-lightGray;
+	}
+	.hamburger-btn-close .line2 {
 		width: 0;
-	  }
-	  .hamburger-btn-close .line3 {
+		// background-color: $color-lightGray;
+	}
+	.hamburger-btn-close .line3 {
 		transform: rotate(45deg) translate(-5px, -6px);
+		// background-color: $color-lightGray;
 	  }
 
 // }

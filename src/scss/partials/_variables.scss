@@ -1,20 +1,24 @@
 //  colors
 $color-body : #FFFFFF;
-$color-title : #242425;
+// $color-title : #242425;
+$color-title: #45456b;
 $color-lightPurple: rebeccapurple;
 $color-lightGreen: #5CDB94;
 $color-lightGray: #EDF5E0;
 $color-darkBlue: #05396B;
 $color-cartOrange : #F45D45;
-$bg-cartOrange : #FFF4F1;
-$font-cartBlue : #5B4EBB;
+$color-lightOrange : #FFF4F1;
+$color-lightBrown: #FCE8A1;
+$color-cartBlue : #5B4EBB;
 // $bg-cartBlue : #FFF4F1;
 
 // fonts-family
 $font-josefin : 'Josefin Sans', sans-serif;
 $font-lora: 'Lora', serif;
 $font-varela: 'Varela Round', sans-serif;
-$font-monoton : 'Monoton', cursive;
+$font-monoton : 'Monoton', 'cursive';
+$font-roboto : 'Roboto', sans-serif;
+$font-londrina: 'Londrina Outline', cursive;
 
 // Font-sizes
 $font-size-lg : 24px;

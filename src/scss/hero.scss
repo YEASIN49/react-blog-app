@@ -1,0 +1,88 @@
+@import './partials/reusable';
+@import './partials/variables';
+@import './partials/breakpoints';
+.header{
+	// max-height: 100vh;
+}
+.headerTitles{
+	@include absolute;
+	@include transform-center;
+	z-index: 90;
+	top: 55%;
+	width: 90%;
+	padding-left: 15px;
+	// background-color: aqua;
+	@include sm{
+		
+		// left: 0;
+		// margin-left: 280px;
+	}
+	// width: 95vw;
+	// width: 90vw;
+	// text-align: left;
+}
+.headerTitleLg{
+	// background-color: aqua;
+	display: block;
+	// width: 95vw;
+	font-family: $font-roboto;
+	color: $color-title; 
+	font-weight: 900;
+	font-size: 32px;
+	line-height: 32px;
+	// margin-left: 150px;
+	@include md{
+		// margin-left: 220px;
+		font-size: 36px;
+	}
+}
+.outlined{
+	font-family: $font-londrina;
+	font-size: 40px;
+}
+.headerDetail{
+	font-family: $font-roboto;
+	// font-size: 16px;
+	color: $color-title;
+	display: block;
+	width: 80vw;
+	padding-top: 20px;
+	line-height: 20px;
+	@include sm{
+		width: 50vw;
+	}
+
+}
+.headerCTAButton{
+	display: block;
+	margin-top: 20px;
+}
+.headerCTAButton a{
+	font-family: $font-roboto;
+	color: $color-title;
+	font-weight: bolder;
+	// font-size: 25px;
+	display: block;
+	text-align: center;
+	border-radius: 0 20px 20px 0;
+	width: 140px;
+	padding: 10px;
+	background-color: $color-lightBrown;
+	transition: 0.5s;
+	&:hover{
+		width: 180px;
+		background-color: $color-title;
+		color: $color-lightOrange;
+		// font-family: $font-londrina;
+	}
+}
+
+.headerImg{
+	width: 100vw;
+	max-width: 100%;
+	height: 100vh;
+	object-fit: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
