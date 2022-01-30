@@ -1,0 +1,68 @@
+:export {
+  colorTitle: #45456b;
+  colorLightPurple: rebeccapurple;
+  colorLightGreen: #5CDB94;
+  colorLightGray: #EDF5E0;
+  colorDarkBlue: #05396B;
+  colorCartOrange: #F45D45;
+  colorLightOrange: #FFF4F1;
+  colorLightBrown: #FCE8A1;
+  colorCartBlue: #5B4EBB;
+  colorCartGreen: #cbffe2;
+  colorCartPink: #ffc9e0;
+}
+
+.categoryCardContainer {
+  width: 50%;
+  cursor: pointer;
+  line-height: 70px;
+  text-align: center;
+  padding: 2px;
+}
+
+@media (min-width: 480px) {
+  .categoryCardContainer {
+    width: 33.33%;
+  }
+}
+
+@media (min-width: 768px) {
+  .categoryCardContainer {
+    width: 25%;
+  }
+}
+
+@media (min-width: 991px) {
+  .categoryCardContainer {
+    width: 20%;
+  }
+}
+
+.categoryCard {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  display: inline-block;
+  color: #45456b;
+  font-weight: bolder;
+  background-color: #FCE8A1;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+@media (min-width: 480px) {
+  .categoryCard {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 658px) {
+  .categoryCard {
+    font-size: 20px;
+  }
+}
+
+.categoryCard:hover {
+  background-color: rebeccapurple;
+  color: #EDF5E0;
+}

@@ -1,0 +1,57 @@
+@import './partials/reusable';
+@import './partials/variables';
+@import './partials/breakpoints';
+
+body{
+	// background-color: #f9fcff;
+}
+
+.homeBodyContent{
+	// display: flex;
+	// flex-flow: column-reverse ;
+	// @include smTab{
+	// 	flex-direction: row;
+	// }
+}
+.allPostWrapper{
+	max-width: 1180px;
+	margin: 0 auto;
+	// @include smTab{
+	// 	flex: 9;
+	// }
+}
+.sectionTitle{
+	padding: 20px;
+	font-family: $font-londrina;
+	color: $color-title;
+	border-bottom: 4px solid $color-title;
+	border-radius: 5%;
+	width: 50%;
+	font-size: 34px;
+	margin: 0 auto 15px auto;
+	text-align: center;
+	width: 250px;
+	font-family: $font-londrina;
+	color: $color-title;
+	font-size: 30px;
+	padding: 8px;
+	margin: 50px auto 25px auto;
+	text-align: center;
+	border-top: 3px solid $color-title;
+	border-bottom: 3px solid $color-title;
+}
+.allPostContainer{
+	display: flex;
+	flex-flow: row wrap;
+	// background-color: orange;
+}
+// $color-title: blue;
+// :export {
+// 	whitecolor: $white-color;
+// 	darkcolor: $color-title;
+// 	lightcolor: $light-color;
+// 	mediumcolor: $medium-color;
+// 	alertcolor: $alert-color;
+// 	lightblackcolor: $light-black-color;
+// 	blackcolor: $black-color;
+//   }

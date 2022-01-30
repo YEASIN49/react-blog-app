@@ -1,3 +1,17 @@
+:export {
+  colorTitle: #45456b;
+  colorLightPurple: rebeccapurple;
+  colorLightGreen: #5CDB94;
+  colorLightGray: #EDF5E0;
+  colorDarkBlue: #05396B;
+  colorCartOrange: #F45D45;
+  colorLightOrange: #FFF4F1;
+  colorLightBrown: #FCE8A1;
+  colorCartBlue: #5B4EBB;
+  colorCartGreen: #cbffe2;
+  colorCartPink: #ffc9e0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -34,15 +48,20 @@
 }
 
 .logo {
+  font-size: 26px;
   font-family: "Londrina Outline", cursive;
-  font-size: 36px;
   font-weight: bold;
   color: #303036;
   padding: 5px 5px 5px 30px;
 }
 
+@media (min-width: 480px) {
+  .logo {
+    font-size: 36px;
+  }
+}
+
 nav div span {
-  font-size: 36px;
   color: rgba(255, 255, 255, 0.699);
   font-weight: bold;
 }

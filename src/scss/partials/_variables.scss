@@ -4,12 +4,15 @@ $color-body : #FFFFFF;
 $color-title: #45456b;
 $color-lightPurple: rebeccapurple;
 $color-lightGreen: #5CDB94;
+$color-cartGreen: #cbffe2;
 $color-lightGray: #EDF5E0;
 $color-darkBlue: #05396B;
 $color-cartOrange : #F45D45;
 $color-lightOrange : #FFF4F1;
 $color-lightBrown: #FCE8A1;
 $color-cartBlue : #5B4EBB;
+$color-cartPink: #ffc9e0;
+
 // $bg-cartBlue : #FFF4F1;
 
 // fonts-family
@@ -25,3 +28,24 @@ $font-size-lg : 24px;
 
 // breakpoints
 $sm-768 : 768px;
+
+
+:export {
+	// whitecolor: $white-color;
+	colorTitle: $color-title;
+	colorLightPurple : $color-lightPurple;
+	colorLightGreen : $color-lightGreen;
+	colorLightGray : $color-lightGray;
+	colorDarkBlue : $color-darkBlue;
+	colorCartOrange : $color-cartOrange;
+	colorLightOrange : $color-lightOrange;
+	colorLightBrown : $color-lightBrown;
+	colorCartBlue : $color-cartBlue;
+	colorCartGreen : $color-cartGreen;
+	colorCartPink: $color-cartPink;
+	// lightcolor: $light-color;
+	// mediumcolor: $medium-color;
+	// alertcolor: $alert-color;
+	// lightblackcolor: $light-black-color;
+	// blackcolor: $black-color;
+  }
