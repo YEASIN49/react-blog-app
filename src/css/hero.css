@@ -1,3 +1,17 @@
+:export {
+  colorTitle: #45456b;
+  colorLightPurple: rebeccapurple;
+  colorLightGreen: #5CDB94;
+  colorLightGray: #EDF5E0;
+  colorDarkBlue: #05396B;
+  colorCartOrange: #F45D45;
+  colorLightOrange: #FFF4F1;
+  colorLightBrown: #FCE8A1;
+  colorCartBlue: #5B4EBB;
+  colorCartGreen: #cbffe2;
+  colorCartPink: #ffc9e0;
+}
+
 .headerTitles {
   position: absolute;
   top: 50%;

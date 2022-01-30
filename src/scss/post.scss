@@ -1,0 +1,102 @@
+@import './partials/reusable';
+@import './partials//variables';
+@import './partials/breakpoints';
+
+// .postContainer{
+// 	display: flex;
+// 	flex-direction: row wrap;
+// }
+.postWrapper{
+	width: 100%;
+	padding: 10px 10px;
+	
+	@include sm{
+		width: 50%;
+		padding: 10px 5px;
+	}
+	@include md{
+		width: 33.33%;
+	}
+	// height: 450px;
+	// background-color: red;
+	// border: 2px solid black;
+	// padding: 10px;
+	// background-color: orchid;
+}
+.postContainer{
+	border-radius: 20px;
+	// font-family: $font-roboto;
+	font-family: $font-roboto;
+}
+.postDescription{
+	padding: 5px 10px;
+	// height: 250px;
+}
+.postCategory{
+	// font-family: $font-lora;
+	display: inline-block;
+	color: $color-lightPurple;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: $color-lightGreen;
+	border-radius: 20px;
+	padding: 1px 5px;
+	margin-right: 5px; 
+	margin-bottom: 5px;
+}
+.postTitle{
+	// font-family: $font-roboto;
+	padding: 5px 0;
+}
+.authorInfoContainer{
+	display: flex;
+	justify-content: space-between;
+	margin: 5px 0 10px 0;
+	color: $color-lightPurple;
+	font-size: 12px;
+	font-weight: bold;
+}
+.postAuthor{
+	font-family: $font-varela;
+	padding: 1px 0;
+	// background-color:palegreen;
+	// padding: 5px 0;
+	// border-bottom: 1px solid $color-title;
+	// border-bottom: 1px solid $color-lightBrown;
+	// display: inline-block;
+}
+.uploadDate{
+	font-family: $font-varela;
+	background-color: $color-lightGreen;
+	border-radius: 20px;
+	padding: 1px 5px;
+	// border-bottom: 1px solid $color-lightBrown;
+}
+.postThumbnail{
+	// width: 120px;
+	border-radius: 20px 20px 0 0;
+	display: block;
+	width: 100%;
+	height: 250px;
+	margin: 0 auto;
+}
+.postShortDescription{
+	font-family: $font-varela;
+	letter-spacing: 0.001em;
+	font-size: 15px;
+}
+.readMoreLink{
+	display: block;
+	padding: 5px 0;
+}
+.readButton{
+	// background-color: red;
+	border: 2px solid $color-title;
+	text-align: center;
+	display: block;
+	width: 180px;
+	margin: 15px auto 0 auto;
+	// height: 90px;
+	padding: 10px;
+	border-radius: 20px;
+}
