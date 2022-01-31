@@ -1,7 +1,7 @@
 import React from "react";
 import CategoryCard from "../components/categoryCard";
 import '../css/category.css';
-import thumbnail from '../images/thumbnail.jpeg';
+// import thumbnail from '../images/thumbnail.jpeg';
 
 const Category = () => {
 	return (
