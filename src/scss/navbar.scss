@@ -16,7 +16,8 @@
 	box-shadow: 1px 1px 5px #45456b6c;
 	width: 100%;
 	font-family: $font-varela;
-	position: absolute;
+	// position: absolute;
+	position: fixed;
 	top: 0;
 	z-index: 99;
 }
@@ -28,10 +29,7 @@
 	align-items: center;
 	justify-content: space-between;
 }
-nav div{
-	
-	// font-weight: 600;
-}
+
 .logo{
 	// font-family: $font-monoton;
 	font-size: 26px;
@@ -109,7 +107,7 @@ nav div span{
 		flex: 6;
 		font-weight: bold;
 		font-size: small;
-		background-color: rebeccapurple;
+		// background-color: rebeccapurple;
 		height: 0;
 		padding-top: 0;
 		border-top: none;

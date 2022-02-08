@@ -1,0 +1,127 @@
+:export {
+  colorTitle: #45456b;
+  colorLightPurple: rebeccapurple;
+  colorLightGreen: #5CDB94;
+  colorLightGray: #EDF5E0;
+  colorDarkBlue: #05396B;
+  colorCartOrange: #F45D45;
+  colorLightOrange: #FFF4F1;
+  colorLightBrown: #FCE8A1;
+  colorCartBlue: #5B4EBB;
+  colorCartGreen: #cbffe2;
+  colorCartPink: #ffc9e0;
+}
+
+.postingWrapper {
+  padding: 75px 0;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.postingImage {
+  width: 100%;
+  height: 280px;
+  border-radius: 15px;
+}
+
+.formGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.inputFile {
+  position: absolute;
+  top: 0;
+}
+
+.imageIconContainer {
+  font-family: "Varela Round", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 45px 5px;
+  width: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px auto;
+  border-radius: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  color: #EDF5E0;
+  background-color: #05396B;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.imageIconContainer:hover {
+  background-color: #5B4EBB;
+}
+
+.imageAddIcon {
+  font-size: 28px;
+}
+
+.titleText {
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+  padding: 15px;
+  color: #45456b;
+  background-color: #FFF4F1;
+  border-radius: 10px;
+}
+
+.titleText:focus {
+  outline: none;
+  background-color: #cbffe2;
+  border-radius: 10px;
+}
+
+.postArticle {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  padding: 10px 20px;
+  display: inline;
+  color: #070A09;
+  background-color: #FFF4F1;
+  border-radius: 10px;
+  border: none;
+}
+
+.postArticle:focus {
+  outline: none;
+  background-color: #cbffe2;
+  border-radius: 10px;
+}
+
+.publishButton {
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 5px;
+  width: 140px;
+  margin: 15px auto;
+  border-radius: 50px;
+  border: 2px solid #45456b;
+  background-color: #FCE8A1;
+  color: #45456b;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.publishButton:hover {
+  background-color: #05396B;
+  color: #EDF5E0;
+}

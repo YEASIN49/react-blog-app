@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Navbar from "./components/Navbar";
 import Article from './pages/Article';
+import ArticleCreation from './pages/ArticleCreation';
 import Homepage from './pages/Homepage';
+import ProfileUpdate from './pages/ProfileUpdate';
 
 function App() {
 
@@ -26,8 +28,10 @@ function App() {
         toggleSearchModal={toggleSearchModal}
         toggleBurgerBtn={toggleBurgerBtn}
       />
-      {/*<Homepage />*/}
-      <Article />
+      {/*<Homepage /> */}
+      {/*<Article /> */}
+      {/*<ArticleCreation />*/}
+      <ProfileUpdate />
     </div>
   );
 }
