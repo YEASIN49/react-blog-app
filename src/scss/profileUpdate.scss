@@ -7,20 +7,26 @@
 	min-height: 100vh;
 	background-color: $color-paste;
 }
-.pageUpdateContainer{
-	max-width: 1440px;
+.profileUpdateContainer{
+	max-width: 1100px;
+	margin: 0 auto;
+	// background-color: red;
 }
 .profileUpdateHeader{
 	// background-color: $color-lightGreen;
 	font-family: $font-poppins;
 	color: $color-lightBlack;
 	text-align: center;
-	font-size: 30px;
-	line-height: 34px;
+	line-height: 20px;
+	// font-size: 28px;
 	// font-weight: bolder;
 	@include smTab{
 		font-size: 36px;
+		line-height: 40px;
 	}
+}
+.profileName{
+	color: $color-cartBlue;
 }
 .headerUnderline{
 	display: block;
@@ -28,8 +34,11 @@
 	height: 3px;
 	background-color: $color-lightBlack;
 	margin: 20px auto;
+	max-width: 150px;
 	@include md{
 		margin: 10px auto;
+		width: 20%;
+		max-width: 150px;
 	}
 }
 .profileFormGroup{
@@ -56,8 +65,8 @@
 	@include smTab{
 		height: 45vw;
 		width: 45vw;
-		max-height: 450px;
-		max-width: 450px;
+		max-height: 400px;
+		max-width: 400px;
 	}
 	@include md{
 		// height: 350px;
@@ -113,33 +122,44 @@ font-size: 34px;
 }
 .profileInfo{
 	font-family: $font-poppins;
+	color: $color-cartBlue;
 	font-weight: bold;
 	padding: 10px;
+	// font-size: 24px;
 }
 .inputCred{
+	position: relative;
 	font-family: $font-roboto;
 	font-size: 15px;
 	line-height: 20px;
 	height: 45px;
 	color: $color-lightBlack;
+	background-color: $color-paste;
 	max-width: 85vw;
 	width: 90%;
+	max-width: 768px;
 	padding: 5px 15px;
-	border-radius: 5px;
 	border: none;
 	margin: 10px 0;
+	border-bottom: 2px solid gray;
+	
+	&:focus{
+		outline: 0;
+		box-shadow: -3px 0 0 $color-cartBlue;
+		border-radius: 5px;
+		
+	}
+	
 }
 .updateButton{
-	// width: 120px;
-	
-	margin: 15px 0;
+	margin: 25px 0;
 	padding: 10px 30px;
 	font-family: $font-varela;
 	font-weight: bold;
-	background-color: $color-lightGreen;
-	font-size: 15.5px;
-	// z-index: 1;
-	// border: 2px solid $color-lightBlack;
+	background-color: $color-cartBlue;
+	font-size: 15px;
+	color: $color-lightGray;
+	border-radius: 3px;
 	border: none;
 	display: block;
 	cursor: pointer;
@@ -161,5 +181,13 @@ font-size: 34px;
 		align-items: flex-start;
 	}
 	
-	
+}
+@include xl{
+	.right{
+		align-items: flex-end;
+		padding-right: 90px;
+	}
+	.imgUploaderLabel{
+		margin-right: 132px;
+	}
 }
