@@ -3,12 +3,14 @@ import Navbar from "./components/Navbar";
 import Article from './pages/Article';
 import ArticleCreation from './pages/ArticleCreation';
 import Homepage from './pages/Homepage';
+import Login from './pages/Login';
 import ProfileUpdate from './pages/ProfileUpdate';
 
 function App() {
 
   const [isBurgerBtnOpen, setIsBurgerBtnOpen] = useState(false);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
+  const [accessFormComponentOpener, setAccessFormComponentOpener] = useState(null);
 
   const toggleBurgerBtn = () => {
     const burgerButtonPrevState = isBurgerBtnOpen;
@@ -18,6 +20,9 @@ function App() {
     e.preventDefault();
     const searchModalPrevState = isSearchModalOpen;
     setIsSearchModalOpen(!searchModalPrevState);
+  }
+  const toggleAccessFormComponent = () => {
+
   }
 
   return (
@@ -31,7 +36,8 @@ function App() {
       {/*<Homepage /> */}
       {/*<Article /> */}
       {/*<ArticleCreation />*/}
-      <ProfileUpdate />
+      {/*<ProfileUpdate />*/}
+      <Login />
     </div>
   );
 }

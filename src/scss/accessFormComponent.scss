@@ -1,0 +1,167 @@
+@import './partials/variables';
+@import './partials/breakpoints';
+
+.accessComponentWrapper{
+	// background-color: #886BE4;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	// background-color: #8B6FE6;
+	background-color: $color-title;
+}
+.accessComponentContainer{
+	max-width: 1440px;
+	height: 500px;
+	max-height: 75vh;
+	display: flex;
+	flex-direction: row ;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(252, 181, 74, 0.815);
+	border-radius: 20px;
+}
+.showImageContainer{
+	display: none;
+	@include smTab{
+		flex: 1;
+		display: flex;
+		align-items: center;
+		background: linear-gradient(45deg, $color-title 30%, #dbd0ff1f 100%,#dbd0ff38 70%);
+		box-shadow: -5px 5px 15px  rgba(156, 152, 179, 0.26);
+		// opacity: 0.5;
+		// height: 60vh;
+		height: 500px;
+		max-height: 75vh;
+		min-width: 35vw;
+		border-top-left-radius: 20px;
+		border-bottom-left-radius: 20px;
+	}
+
+}
+.sectionImage{
+	display: block;
+	margin: 0 auto;
+}
+.formContainer{
+	min-width: 95vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: $color-lightGray;
+	box-shadow: 5px 5px 15px  rgba(156, 152, 179, 0.26);
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	height: 500px;
+	max-height: 75vh;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	@include sm{
+		
+		min-width: 80vw;
+	}
+	@include smTab{
+		flex: 1;
+		// height: 60vh;
+		min-width: 35vw;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+
+	}
+	
+}
+.accessForm{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	// background-color: rgb(201, 133, 133);
+	// height: 100%;
+}
+.formTitle{
+	font-family: $font-roboto;
+	color: $color-cartBlue;
+	// padding-bottom: 25px;
+	position: relative;
+	// top: -10%;
+	margin-bottom: 40px;
+	font-weight: 600;
+	// padding: 55px 5px;	
+	// background-color: red;
+	font-size: 20px;
+	@include smTab{
+		font-size: 24px;
+	}
+}
+
+.formTitle span{
+	color: $color-title;
+}
+.inputLabel{
+	font-family: $font-roboto;
+	color: gray;
+	display: block;
+	text-align: left;
+	padding-top: 5px;
+	height: 25px;
+	font-size: 16px;
+	width: 85%;
+	@include sm{
+
+		width: 70%;
+	}
+	// background-color: red;
+}
+.inputField{
+	// display: block;	
+	font-family: $font-roboto;
+	color: rgb(85, 82, 82);
+	font-size: 14px;
+	width: 80%;
+	// background-color: rgb(201, 133, 133);
+	background-color: $color-lightGray;
+	height: 25px;
+	border: none;
+	border-bottom: 1.5px solid rgba(128, 128, 128, 0.507);
+	margin: 0 0 20px 0;
+	// margin-bottom: 5px;
+	// box-shadow: 0 2px 0 gray;
+	&:focus{
+		outline: none;
+	}
+	@include sm{
+	
+		width: 65%;
+	}
+}
+.formPost{
+	width: 100px;
+	height: 35px;
+	border-radius: 5px;
+	border: none;
+	background-color: $color-cartBlue;
+	color: $color-lightGray;
+	font-family: $font-poppins;
+	// font-weight: bold;
+	font-size: 15px;
+	margin-top: 25px;
+	cursor: pointer;
+	&:hover{
+		background-color: $color-title;
+	}
+}
+.createAccountButton{
+	font-family: $font-roboto;
+	color: $color-cartBlue;
+	// font-weight: bold;
+	font-size: 15px;
+	background-color: $color-lightGray;
+	border: none;
+	margin: 25px 5px;
+	cursor: pointer;
+}
+.createAccountButton.register{
+	margin: 0;
+	margin-top: 15px;
+}
