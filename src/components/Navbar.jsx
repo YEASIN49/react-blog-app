@@ -1,5 +1,7 @@
 import '../css/navbar.css';
 import profileImage from '../images/user-profile.jpg';
+import { Link } from 'react-router-dom';
+import { BiLogIn } from "react-icons/bi";
 
 const Navbar = (props) => {
 
@@ -8,13 +10,21 @@ const Navbar = (props) => {
 	return (
 		<nav className='navItemContainer'>
 			<div className='allNavItem'>
-				<div className="navLeft logo">Review<span>Them</span></div>
+				<div className="navLeft logo">Review<span className='logoPartTwo'>Them</span></div>
 				<div className={props.isBurgerBtnOpen ? 'navCenter navOpen' : 'navCenter navClosed'}>
-					<a href='' className='navLinks'>HOME</a>
-					<a href='' className='navLinks'>ABOUT</a>
-					<a href='' className='navLinks'>CONTACT</a>
-					<a href='' className='navLinks'>WRITE</a>
-					<a href='' className='navLinks'>LOGOUT</a>
+					<ul>
+						<Link to='/'>
+							<li href='' className='navLinks'>HOME</li>
+						</Link>
+						<Link to='/createArticle'>
+							<li href='' className='navLinks'>WRITE</li>
+						</Link>
+						<Link to='/userAccess'>
+							<li href='' className='navLinks'>REGISTER</li>
+						</Link>
+
+
+					</ul>
 				</div>
 				<div className={props.isBurgerBtnOpen ? 'navRight' : 'navRight navClosed'}>
 					<div className={props.isSearchModalOpen ? 'modalContainer' : 'modalContainer modalClose'}>
@@ -25,7 +35,12 @@ const Navbar = (props) => {
 						<button className='closeModalBtn' onClick={props.toggleSearchModal}>Close</button>
 					</div>
 					<button onClick={props.toggleSearchModal} className='searchButtonToggler'><span className="material-icons">search</span></button>
-					<img className='profileImage' src={profileImage} />
+					<Link to='/updateProfile'>
+						<img className='profileImage' src={profileImage} />
+					</Link>
+					<Link to='/userAccess'>
+						<div href='' className='navLinks iconLink'><BiLogIn className='linkIcon' />LOGIN</div>
+					</Link>
 				</div>
 				<div className={'burgerButtonContainer'} onClick={props.toggleBurgerBtn}>
 					<div className={props.isBurgerBtnOpen ? "burgerpng hamburger-btn-close" : "burgerpng"}>

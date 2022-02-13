@@ -1,11 +1,11 @@
 import React from "react";
 import AccessFormComponent from "../components/AccessFormComponent";
 
-const Login = () => {
+const AccessAccount = () => {
 	return (
 		<div>
 			<AccessFormComponent />
 		</div>
 	)
 }
-export default Login;
+export default AccessAccount;

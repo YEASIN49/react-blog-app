@@ -3,14 +3,14 @@ import Navbar from "./components/Navbar";
 import Article from './pages/Article';
 import ArticleCreation from './pages/ArticleCreation';
 import Homepage from './pages/Homepage';
-import Login from './pages/Login';
+import Login from './pages/AccessAccount';
 import ProfileUpdate from './pages/ProfileUpdate';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
+import AccessAccount from './pages/AccessAccount';
 
 function App() {
 
@@ -44,7 +44,7 @@ function App() {
         <Route exact path='/article/:postID' element={<Article />} />
         <Route exact path='/createArticle' element={<ArticleCreation />} />
         <Route exact path='/updateProfile' element={<ProfileUpdate />} />
-        <Route exact path='/login' element={<Login />} />
+        <Route exact path='/userAccess' element={<AccessAccount />} />
       </Routes>
     </Router>
   );
