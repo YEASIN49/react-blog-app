@@ -13,6 +13,7 @@
 	// background-color: $font-cartBlue;	
 	// background-color: $color-lightPurple;	
 	// color: $color-lightGray;
+	background-color: $color-body;
 	box-shadow: 1px 1px 5px #45456b6c;
 	width: 100%;
 	font-family: $font-varela;
@@ -32,6 +33,8 @@
 
 .logo{
 	// font-family: $font-monoton;
+	background: linear-gradient(125deg, #FA65A5 85%, $color-body 15%);
+	// background-color: #FA65A5;
 	font-size: 26px;
 	font-family: $font-londrina;
 	// font-size: x-large;
@@ -41,10 +44,18 @@
 	@include sm{
 		font-size: 36px;
 	}
+	&::after{
+		content: "";
+		display: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
 }
-nav div span{
+.logoPartTwo{
 	// font-size: 36px;
 	color: rgba(255, 255, 255, 0.699);
+	padding-right: 35px;
 	// color: rgb(48, 48, 54);
 	// font-size: large;
 	font-weight: bold;
@@ -133,6 +144,16 @@ nav div span{
 		display: inline-block;
 	}
 }
+.linkIcon{
+	font-size: 24px;
+	font-weight: bold;
+	padding-right: 2px;
+}
+.iconLink{
+	// font-size: 16px;
+	display: flex;
+	align-items: center;
+}
 .modalContainer{
 	position: static;
 	transition: 0.5s;
@@ -170,10 +191,11 @@ nav div span{
 	}
 }
 .profileImage{
-	width: 40px;
-	height: 40px;
+	cursor: pointer;
+	width: 35px;
+	height: 35px;
 	border-radius: 50%;
-	margin: 8px 10px;
+	margin: auto 10px;
 	outline: 3px solid $color-darkBlue;
 }
 .searchForm{

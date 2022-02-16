@@ -18,22 +18,27 @@
   background-color: #DFF6E6;
 }
 
-.pageUpdateContainer {
-  max-width: 1440px;
+.profileUpdateContainer {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .profileUpdateHeader {
   font-family: "Poppins", sans-serif;
   color: #070A09;
   text-align: center;
-  font-size: 30px;
-  line-height: 34px;
+  line-height: 20px;
 }
 
 @media (min-width: 658px) {
   .profileUpdateHeader {
     font-size: 36px;
+    line-height: 40px;
   }
+}
+
+.profileName {
+  color: #5B4EBB;
 }
 
 .headerUnderline {
@@ -42,11 +47,14 @@
   height: 3px;
   background-color: #070A09;
   margin: 20px auto;
+  max-width: 150px;
 }
 
 @media (min-width: 768px) {
   .headerUnderline {
     margin: 10px auto;
+    width: 20%;
+    max-width: 150px;
   }
 }
 
@@ -88,8 +96,8 @@
   .profileUpdateImage {
     height: 45vw;
     width: 45vw;
-    max-height: 450px;
-    max-width: 450px;
+    max-height: 400px;
+    max-width: 400px;
   }
 }
 
@@ -152,31 +160,44 @@
 
 .profileInfo {
   font-family: "Poppins", sans-serif;
+  color: #5B4EBB;
   font-weight: bold;
   padding: 10px;
 }
 
 .inputCred {
+  position: relative;
   font-family: "Roboto", sans-serif;
   font-size: 15px;
   line-height: 20px;
   height: 45px;
   color: #070A09;
+  background-color: #DFF6E6;
   max-width: 85vw;
   width: 90%;
+  max-width: 768px;
   padding: 5px 15px;
-  border-radius: 5px;
   border: none;
   margin: 10px 0;
+  border-bottom: 2px solid gray;
+}
+
+.inputCred:focus {
+  outline: 0;
+  -webkit-box-shadow: -3px 0 0 #5B4EBB;
+          box-shadow: -3px 0 0 #5B4EBB;
+  border-radius: 5px;
 }
 
 .updateButton {
-  margin: 15px 0;
+  margin: 25px 0;
   padding: 10px 30px;
   font-family: "Varela Round", sans-serif;
   font-weight: bold;
-  background-color: #5CDB94;
-  font-size: 15.5px;
+  background-color: #5B4EBB;
+  font-size: 15px;
+  color: #EDF5E0;
+  border-radius: 3px;
   border: none;
   display: block;
   cursor: pointer;
@@ -203,5 +224,17 @@
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+  }
+}
+
+@media (min-width: 1440px) {
+  .right {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding-right: 90px;
+  }
+  .imgUploaderLabel {
+    margin-right: 132px;
   }
 }

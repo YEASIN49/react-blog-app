@@ -7,11 +7,11 @@ const ProfileUpdate = () => {
 	return (
 		<div className="profileUpdatewrapper">
 			<div className="profileUpdateContainer">
-				<h2 className="profileUpdateHeader">YEASIN'S PROFILE</h2>
+				<h2 className="profileUpdateHeader"><span className="profileName">YEASIN</span>'S PROFILE</h2>
 				<span className="headerUnderline"></span>
 				<div className="profileUpdateContent">
 					<form className="profileUpdateForm">
-						<div className="profileFormGroup ">
+						<div className="profileFormGroup right">
 							<img className="profileUpdateImage" src={profileImg} />
 							<label htmlFor="imgUploader" className="imgUploaderLabel">
 								<BiImageAdd className='uploadImgIcon' />
