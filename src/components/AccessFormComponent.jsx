@@ -32,9 +32,11 @@ const AccessFormComponent = () => {
 					<form className="accessForm">
 						<h2 className="formTitle">Register <span>Your Account</span></h2>
 						<label className="inputLabel" htmlFor="userName">Name</label>
-						<input className="inputField" id="userEmail" type="text" />
+						<input className="inputField" id="username" type="text" />
+
 						<label className="inputLabel" htmlFor="userName">Email</label>
 						<input className="inputField" id="userEmail" type="email" />
+
 						<label className="inputLabel" htmlFor="userPassword">Password</label>
 						<input className="inputField" id="userPassword" type="password" />
 						<button className="formPost">Login</button>

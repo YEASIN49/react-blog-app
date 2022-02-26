@@ -12,7 +12,7 @@ const ArticleCreation = () => {
 				</div>
 				<form className='postingForm'>
 					<div className='formGroup'>
-						<label for="inputFile">
+						<label htmlFor="inputFile">
 							<span className='imageIconContainer'>
 								<BiImageAdd className='imageAddIcon' />
 								<span>

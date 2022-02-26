@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import thumbnail from '../images/thumbnail.jpeg';
 import '../css/fullArticle.css';
 import { MdDelete } from "react-icons/md";
 import { BiEdit } from 'react-icons/bi';
+import axios from "axios";
 
-const FullArticle = () => {
+const FullArticle = (props) => {
+	const [postData, setPostData] = useState("");
+
+	console.log("outside useeffect")
+	useEffect(() => {
+		console.log("in useeffect")
+		const fetchPostData = async (postId) => {
+			const response = await axios.get(`/posts/${postId}`);
+			// console.log(response);
+			// return response;
+			setPostData((prevState) => prevState = response.data);
+		}
+		fetchPostData(props.postId);
+	}, []);
+	console.log(postData);
+	// console.log(props.postId)
+
 	return (
 		<div className='fullArticleWrapper'>
 			<div className='fullArticleContainer'>
@@ -18,13 +35,13 @@ const FullArticle = () => {
 					*/}
 				</div>
 				<div className='fullArticleBody'>
-					<h1 className='articleTitle'>Title of the article here</h1>
+					<h1 className='articleTitle'>{postData.title}</h1>
 					<div className='authorDetail'>
-						<span>Author : MD. Yeasin Ali</span>
-						<span className='postedDate'>Posted: 30-01-22</span>
+						<span>Author : {postData.username}</span>
+						<span className='postedDate'>Posted: {new Date(postData.updatedAt).toDateString()}</span>
 
 					</div>
-					<p className='fullArticle'>
+					<div className='fullArticle'>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
 						molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
 						numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
@@ -61,7 +78,7 @@ const FullArticle = () => {
 						sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
 						recusandae alias error harum maxime adipisci amet laborum. Perspiciatis
 						minima nesciunt dolorem! Officiis iure rerum voluptates
-					</p>
+					</div>
 				</div>
 			</div>
 		</div>

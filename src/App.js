@@ -11,6 +11,7 @@ import {
   Route
 } from "react-router-dom";
 import AccessAccount from './pages/AccessAccount';
+import ScrollToTop from "./HOC/ScrollToTop";
 
 function App() {
 
@@ -39,13 +40,15 @@ function App() {
         toggleSearchModal={toggleSearchModal}
         toggleBurgerBtn={toggleBurgerBtn}
       />
-      <Routes>
-        <Route exact path='/' element={<Homepage />} />
-        <Route exact path='/article/:postID' element={<Article />} />
-        <Route exact path='/createArticle' element={<ArticleCreation />} />
-        <Route exact path='/updateProfile' element={<ProfileUpdate />} />
-        <Route exact path='/userAccess' element={<AccessAccount />} />
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route exact path='/' element={<Homepage />} />
+          <Route exact path='/article/:postID' element={<Article />} />
+          <Route exact path='/createArticle' element={<ArticleCreation />} />
+          <Route exact path='/updateProfile' element={<ProfileUpdate />} />
+          <Route exact path='/userAccess' element={<AccessAccount />} />
+        </Routes>
+      </ScrollToTop>
     </Router>
   );
 }
