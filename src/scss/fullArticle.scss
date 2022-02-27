@@ -4,7 +4,7 @@
 .FullArticlePage{
 	display: flex;
 	flex-direction: column;
-	@include smTab{
+	@include md{
 		flex-flow: row wrap;
 	}
 }
@@ -64,7 +64,10 @@
 	margin: 0 auto;
 }
 .fullArticleContainer{
-	padding: 0 10px;
+	// padding: 0 5px;
+	@include sm{
+		padding: 0 5px;
+	}
 }
 .fullArticleThumbnailContainer{
 	// text-align: center;
@@ -73,9 +76,9 @@
 	display: block;
 	width: 100%;
 	// max-width: 1440px;
-	margin: 0 auto;
+	margin: 15px auto;
 	height: 450px;
-	margin-top: 75px;
+	// margin-top: 15px;
 	border-radius: 10px;
 	object-fit: cover;
 	background-position: center;
@@ -103,7 +106,7 @@
 .fullArticleBody{
 	max-width: 1080px;
 	margin: 0 auto;
-	// padding: 0 10px;
+	padding: 0 10px;
 	
 	@include smTab{
 		padding: 0 10px;
@@ -114,11 +117,19 @@
 }
 .articleTitle{
 	font-family: $font-roboto;
-	margin-top: 15px;
-	font-size: 36px;
-	@include md{
-		font-size: 52px;
+	margin-top: 65px;
+	padding-bottom: 10px;
+	font-size: 30px;
+	@include sm{
+		font-size: 36px;
 	}
+	@include md{
+		font-size: 46px;
+	}
+	@include lg{
+		font-size: 52px;
+		// color: red;
+	} 
 	// color: $color-title;
 	// font-weight: bold;
 }
@@ -139,7 +150,7 @@
 }
 .postedDate{
 	width: 150px;
-	padding-top: 25px;
+	padding-top: 15px;
 	@include sm{
 		padding-top: 0;
 		text-align: center;
@@ -155,6 +166,7 @@
 	color: rgba(0, 0, 0, 0.932);
 	// background-color: $color-lightOrange;
 	border-radius: 5px;
+	padding: 0 5px;
 	// padding: 10px 5px;
 	@include md{
 		font-size: 20px;

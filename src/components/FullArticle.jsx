@@ -3,6 +3,7 @@ import thumbnail from '../images/thumbnail.jpeg';
 import '../css/fullArticle.css';
 import { MdDelete } from "react-icons/md";
 import { BiEdit } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 import axios from "axios";
 
 const FullArticle = (props) => {
@@ -25,19 +26,23 @@ const FullArticle = (props) => {
 	return (
 		<div className='fullArticleWrapper'>
 			<div className='fullArticleContainer'>
-				<div className='fullArticleThumbnailContainer'>
-					<img className='fullArticleThumbnail' src={thumbnail} />
-					{/*
-						<div className='fullArticleActionLogo'>
-						<span className='fullArticleActionBtn edit'><BiEdit /></span>
-						<span className='fullArticleActionBtn delete'><MdDelete /></span>
-					</div>
-					*/}
-				</div>
 				<div className='fullArticleBody'>
 					<h1 className='articleTitle'>{postData.title}</h1>
+					<div className='fullArticleThumbnailContainer'>
+						<img className='fullArticleThumbnail' src={thumbnail} />
+
+						{/*<div className='fullArticleActionLogo'>
+							<span className='fullArticleActionBtn edit'><BiEdit /></span>
+							<span className='fullArticleActionBtn delete'><MdDelete /></span>
+	</div>*/}
+
+					</div>
 					<div className='authorDetail'>
-						<span>Author : {postData.username}</span>
+						<span>Author :
+							<Link to={`/?user=${postData.username}`} className="inheritLink">
+								<span>{postData.username}</span>
+							</Link>
+						</span>
 						<span className='postedDate'>Posted: {new Date(postData.updatedAt).toDateString()}</span>
 
 					</div>

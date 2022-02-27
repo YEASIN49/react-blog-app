@@ -1,9 +1,22 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import CategoryCard from "../components/categoryCard";
 import '../css/category.css';
 // import thumbnail from '../images/thumbnail.jpeg';
 
 const Category = () => {
+	const [allCategory, setAllCategory] = useState([]);
+
+	useEffect(() => {
+		const fetchAllCategory = async () => {
+			const response = await axios.get("/categories");
+			setAllCategory((prevState) => prevState = response.data);
+		}
+		fetchAllCategory();
+	}, []);
+	console.log("allCategory")
+	console.log(allCategory)
+
 	return (
 		<div className="categoryWrapper">
 			<div className="categoryContainer">
@@ -13,13 +26,21 @@ const Category = () => {
 						<img className="categoryThumbnail" src={thumbnail} />
 					*/}
 					<div className="categoryCardWrapper">
-						<CategoryCard category={"WEB"} />
-						<CategoryCard category={"FRONTEND"} />
-						<CategoryCard category={"BACKEND"} />
-						<CategoryCard category={"PROGRAMMING"} />
-						<CategoryCard category={"SOFTWARE"} />
-						<CategoryCard category={"IOT"} />
-						<CategoryCard category={"RISING TECH"} />
+						{allCategory.map((category) => (
+							// console.log("inside category" + category.name);
+							<CategoryCard
+								key={category._id}
+								category={category.name}
+							/>
+						))}
+						{/*
+							<CategoryCard category={"FRONTEND"} />
+							<CategoryCard category={"BACKEND"} />
+							<CategoryCard category={"PROGRAMMING"} />
+							<CategoryCard category={"SOFTWARE"} />
+							<CategoryCard category={"IOT"} />
+							<CategoryCard category={"RISING TECH"} />
+						*/}
 
 					</div>
 				</div>
