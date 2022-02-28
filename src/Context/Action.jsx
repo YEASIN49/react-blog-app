@@ -4,7 +4,7 @@ export const LoginStart = (userCredential) => ({
 
 export const LoginSuccess = (user) => ({
     type: "LOGIN_SUCCESS",
-    payload: user,
+    payload: email,
 });
 
 export const LoginFailed = () => ({

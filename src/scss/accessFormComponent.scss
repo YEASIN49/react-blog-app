@@ -172,6 +172,10 @@
 		background-color: $color-title;
 	}
 }
+.formPost:disabled{
+	cursor: progress;
+	// background-color: ; 
+}
 .createAccountButton{
 	font-family: $font-roboto;
 	color: $color-cartBlue;
