@@ -6,12 +6,12 @@ import partialVariable from '../scss/partials/_variables.scss'
 
 
 const Posts = (props) => {
-	// console.log(partialVariable.colorTitle);
-	// console.log(props.allPost);
+	
 	const fetchedPost = props.allPost.slice();
-	console.log(fetchedPost);
+	
+	
 	return (
-		<div className="allPostWrapper">
+		<div id="allPostSection" className="allPostWrapper">
 			<h1 className="sectionTitle">All Articles</h1>
 			<div className="allPostContainer">
 				{fetchedPost.map((post) => (

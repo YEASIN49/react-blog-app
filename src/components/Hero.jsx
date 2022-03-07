@@ -2,23 +2,22 @@ import React, { useState, useEffect, useRef } from "react";
 import "../css/hero.css";
 import heroMd from '../images/hero-md.jpg'
 import heroSm from '../images/hero-sm.jpg'
+// import { Link } from "react-router-dom";
 
 export default function Hero() {
 
 	const [viewportSize, setViewportSize] = useState(document.body.clientWidth);
 	const imgSrc = useRef(null);
-	// console.log(document.body.clientWidth + "clw");
-	// console.log(imgSrc.current + "img");
+
 
 
 	useEffect(() => {
-		// console.log("entered");
+	
 		if (document.body.clientWidth > 500) {
-			// console.log("entered if");
+		
 			imgSrc.current.setAttribute("src", heroMd);
 		} else {
-			// console.log("entered else");
-			// console.log(document.getElementById('test'));
+			
 			document.getElementById('test').setAttribute("src", heroSm);
 		}
 	}, [viewportSize]);
@@ -26,16 +25,16 @@ export default function Hero() {
 	useEffect(() => {
 		// window.onresize = viewportChangeHandler;
 		window.addEventListener("resize", viewportChangeHandler);
-		// console.log("===> added")
+		
 		return () => {
-			// console.log("cleaned");
+			
 			window.removeEventListener("resize", viewportChangeHandler);
 		}
 
 	});
 
 	const viewportChangeHandler = () => {
-		// console.log("called")
+		
 		setViewportSize(document.body.clientWidth);
 	}
 
@@ -47,7 +46,9 @@ export default function Hero() {
 				<br />
 				<span className="headerTitleLg">THE MORE THEY LEARN</span>
 				<span className="headerDetail">An online blogging platform for tech enthusiast around the world. Post, Comment, Vote to let others know the effectiveness of your writing and knowledge.</span>
-				<span className="headerCTAButton"><a href="#">See Reviews...</a></span>
+				{/* <Link to='/#allPostSection'> */}
+					<span className="headerCTAButton"><a href="#allPostSection" >See Reviews...</a></span>
+				{/* </Link> */}
 			</div>
 			<img
 				ref={imgSrc}

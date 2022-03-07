@@ -14,11 +14,9 @@ const Category = () => {
 		}
 		fetchAllCategory();
 	}, []);
-	console.log("allCategory")
-	console.log(allCategory)
 
 	return (
-		<div className="categoryWrapper">
+		<div id="categorySection" className="categoryWrapper">
 			<div className="categoryContainer">
 				<div className="categoryContainer">
 					<h3 className="categorySectionHeader">Read By Category</h3>
@@ -27,7 +25,6 @@ const Category = () => {
 					*/}
 					<div className="categoryCardWrapper">
 						{allCategory.map((category) => (
-							// console.log("inside category" + category.name);
 							<CategoryCard
 								key={category._id}
 								category={category.name}

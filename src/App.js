@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Navbar from "./components/Navbar";
 import Article from './pages/Article';
 import ArticleCreation from './pages/ArticleCreation';
@@ -12,12 +12,16 @@ import {
 } from "react-router-dom";
 import AccessAccount from './pages/AccessAccount';
 import ScrollToTop from "./HOC/ScrollToTop";
+import { Context } from './Context/Context';
 
 function App() {
 
   const [isBurgerBtnOpen, setIsBurgerBtnOpen] = useState(false);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [accessFormComponentOpener, setAccessFormComponentOpener] = useState(null);
+
+  // CONTEXT_API DATA
+  const {user} = useContext(Context);
 
   const toggleBurgerBtn = () => {
     const burgerButtonPrevState = isBurgerBtnOpen;
@@ -47,6 +51,14 @@ function App() {
           <Route exact path='/createArticle' element={<ArticleCreation />} />
           <Route exact path='/updateProfile' element={<ProfileUpdate />} />
           <Route exact path='/userAccess' element={<AccessAccount />} />
+          <Route
+            path="*" 
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>There's nothing here!</p>
+              </main>
+            }
+        />
         </Routes>
       </ScrollToTop>
     </Router>

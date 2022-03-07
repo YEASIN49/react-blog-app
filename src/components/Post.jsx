@@ -4,22 +4,42 @@ import thumbnail from '../images/thumbnail.jpeg';
 import { Link } from "react-router-dom";
 
 const Post = (props) => {
+
+	const publicImage = "http://localhost:5000/images/";
+	const shortPostDescription = props.postContent.description.slice(0,170);
+
+	
+
 	return (
-		<div className="postWrapper">
+		<div  className="postWrapper" >
 			<div style={{ backgroundColor: props.bgColor }} className="postContainer" >
 				<div className="postThumbnailContainer">
-					<img className="postThumbnail" src={thumbnail} />
+					{
+						props.postContent.photo ?
+						<img className="postThumbnail" src={publicImage+props.postContent.photo} />
+						:
+						<img className="postThumbnail" src={thumbnail} />
+					}
 				</div>
 				<div className="postDescription">
-					<span className="postCategory">Category A</span>
-					<span className="postCategory">Category B</span>
+					{
+						props.postContent.categories.map((item, index) =>(
+							<span key={index} className="postCategory">{item}</span>
+						))
+					}
+					{/* <span className="postCategory">Category A</span> */}
+					{/* <span className="postCategory">Category B</span> */}
 					<h3 className="postTitle">{props.postContent.title} </h3>
 					<div className="authorInfoContainer">
-						<span className="postAuthor">Author : {props.postContent.username}</span>
+					<span>Author :
+							<Link to={`/?user=${props.postContent.username}`} className="inheritLink">
+								<span>{props.postContent.username}</span>
+							</Link>
+						</span>
 						<span className="uploadDate">{new Date(props.postContent.updatedAt).toDateString()}</span>
 					</div>
 					<p className="postShortDescription">
-						{props.postContent.description}
+						{shortPostDescription}
 						{/*<a className="readMoreLink" href="">Read More....</a>*/}
 					</p>
 					<Link to={`/article/${props.postContent._id}`} className="readButton">

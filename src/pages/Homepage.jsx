@@ -11,14 +11,13 @@ export default function Homepage() {
 
 	const [allPost, setAllPost] = useState([]);
 	const querySearch = useLocation().search;
-	console.log(`$FOR QUERY SEARCH => ${querySearch}`)
-	console.log(querySearch);
+
+	const publicImage = "http://localhost:5000/images/";
 
 	useEffect(() => {
 		const fetchPosts = async () => {
 			const response = await axios.get("/posts" + querySearch)
-			// console.log("Inside fetchPosts of Homepage.jsx");
-			// console.log(response.data);
+			
 			setAllPost(response.data);
 		}
 		fetchPosts();
