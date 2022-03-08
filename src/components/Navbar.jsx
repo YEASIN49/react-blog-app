@@ -10,6 +10,7 @@ const Navbar = (props) => {
 	// isBurgerBtnOpen
 
 	const {user, dispatch} = useContext(Context);
+	const profileImagepath = "http://localhost:5000/images/"
 	
 	// const renderLogin = {
 	// 	pathname: 
@@ -71,9 +72,9 @@ const Navbar = (props) => {
 						user ? 
 							<Link to='/updateProfile'>
 								{
-									user.profilePicture ? <img className='profileImage' src={user.profilePicture} />
+									user.profilePicture ? <img className='profileImage' src={profileImagepath+user.profilePicture} />
 									:
-									<span className='profileImage profileLogo'>{user.username.slice(0,1).toUpperCase()}</span>
+									<img className='profileImage' src={profileImagepath+"default_image.jpg"} />
 								}
 							</Link>
 							:

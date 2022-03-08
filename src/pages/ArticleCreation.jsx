@@ -62,7 +62,6 @@ const ArticleCreation = () => {
 		};
 		if(photo){
 			let photoData = new FormData(); 
-			// const filename = `${photo.name}`;
 			photoInfoAdder(photoData, newPost, photo);
 
 			try {
