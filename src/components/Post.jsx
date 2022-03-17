@@ -7,6 +7,7 @@ const Post = (props) => {
 
 	const publicImage = "http://localhost:5000/images/";
 	const shortPostDescription = props.postContent.description.slice(0,170);
+	const postShortTitle = props.postContent.title.slice(0,80);
 
 	
 
@@ -29,7 +30,7 @@ const Post = (props) => {
 					}
 					{/* <span className="postCategory">Category A</span> */}
 					{/* <span className="postCategory">Category B</span> */}
-					<h3 className="postTitle">{props.postContent.title} </h3>
+					<h3 className="postTitle"><span>{`${postShortTitle}...`} </span></h3>
 					<div className="authorInfoContainer">
 					<span>Author :
 							<Link to={`/?user=${props.postContent.username}`} className="inheritLink">
@@ -39,7 +40,7 @@ const Post = (props) => {
 						<span className="uploadDate">{new Date(props.postContent.updatedAt).toDateString()}</span>
 					</div>
 					<p className="postShortDescription">
-						{shortPostDescription}
+						{`${shortPostDescription}....`}
 						{/*<a className="readMoreLink" href="">Read More....</a>*/}
 					</p>
 					<Link to={`/article/${props.postContent._id}`} className="readButton">

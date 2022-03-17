@@ -72,6 +72,7 @@
 	position: absolute;
 	top: 150px;
 	left: 50%;
+	max-width: 240px;
 	transform: translate(-50%, -50%);
 	font-weight: bold;
 	display: flex;
@@ -87,28 +88,33 @@
 	
 }
 .navOpen{
-	top: 368px;
+	top: 40px;
 	border-radius: 0px;
 	width: 100%;
+	@include sm{
+		top: 50px;
+	}
 }
 .navClosed{
-	top: -200vh;
+	top: -150vh;
 	width: 5%;
 	border-radius: 999px;
 
 }
 .navCenter{
-	transform: translate(-50%, -50%);
+	transform: translate(-50%);
 	// width: 100%;
 	height: 100vh;
 	position: absolute;
 	left: 50%;
+	
 	border-top: 3px solid $color-cartOrange;
 	padding-top: 200px;
 	// background-color: $color-title;
 	background-color: $color-lightBrown;
 	transition: top 0.5s, border-radius 1.2s, width 1.5s;
 	// transition: 0.8s;
+	
 	@include md{
 		position: static;
 		display: flex;

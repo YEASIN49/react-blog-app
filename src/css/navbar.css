@@ -94,6 +94,7 @@
   position: absolute;
   top: 150px;
   left: 50%;
+  max-width: 240px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-weight: bold;
@@ -127,20 +128,26 @@
 }
 
 .navOpen {
-  top: 368px;
+  top: 40px;
   border-radius: 0px;
   width: 100%;
 }
 
+@media (min-width: 480px) {
+  .navOpen {
+    top: 50px;
+  }
+}
+
 .navClosed {
-  top: -200vh;
+  top: -150vh;
   width: 5%;
   border-radius: 999px;
 }
 
 .navCenter {
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   height: 100vh;
   position: absolute;
   left: 50%;

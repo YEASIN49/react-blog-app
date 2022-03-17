@@ -2,10 +2,7 @@
 @import './partials//variables';
 @import './partials/breakpoints';
 
-// .postContainer{
-// 	display: flex;
-// 	flex-direction: row wrap;
-// }
+
 .postWrapper{
 	width: 100%;
 	padding: 10px 10px;
@@ -27,27 +24,63 @@
 	border-radius: 20px;
 	// font-family: $font-roboto;
 	font-family: $font-roboto;
+	outline: 1px solid rgba(128, 128, 128, 0.301);
+	box-shadow: 0px 3px 5px  #c0c0b0;
+	transition: 0.2s;
+	overflow: hidden;
+	cursor: default;
+	&:hover{
+		transform: scale(1.04);
+		transition: 0.2s;
+		// img{
+		// 	transform: scale(1.04);
+		// 	transition: 0.2s;
+		// }
+
+	}
 }
 .postDescription{
 	padding: 5px 10px;
 	// height: 250px;
+	
 }
 .postCategory{
 	// font-family: $font-lora;
 	display: inline-block;
-	color: $color-lightPurple;
+	color:gray;
 	font-size: 12px;
 	font-weight: bold;
-	background-color: $color-lightGreen;
+	// background-color: $color-darkBlue;
+	border: 1px solid gray;
 	border-radius: 20px;
-	padding: 1px 5px;
+	padding: 1px 8px;
 	margin-right: 5px; 
 	margin-bottom: 5px;
 }
 .postTitle{
 	// font-family: $font-roboto;
 	padding: 5px 0;
+	// height: 102px;
+	height: fit-content;
+	@include sm{
+		display: flex;
+		align-items: center;
+		height: 120px;
+		// background-color: red;
+	}
+	@include lg{
+		height: 80px;
+
+	}
 }
+// .postTitle span{
+// 	@include sm{
+// 		display: inline;
+// 		vertical-align: middle;
+// 		background-color: red;
+// 	}
+//  }
+
 .authorInfoContainer{
 	display: flex;
 	justify-content: space-between;
@@ -81,17 +114,28 @@
 	margin: 0 auto;
 }
 .postShortDescription{
-	font-family: $font-varela;
+	// font-family: $font-varela;
+	font-family: $font-poppins;
 	letter-spacing: 0.001em;
-	font-size: 15px;
+	font-size: 13.5px;
+	height: fit-content;
+	@include sm{
+		height: 120px;
+	}
+	@include lg{
+		height: 100px;
+
+	}
 }
 .readMoreLink{
 	display: block;
 	padding: 5px 0;
 }
 .readButton{
-	// background-color: red;
-	border: 2px solid $color-title;
+	background-color: $color-darkBlue;
+	// background-color: $color-lightGreen;
+	color: $color-body;
+	// border: 2px solid $color-title;
 	text-align: center;
 	display: block;
 	width: 180px;
@@ -99,4 +143,11 @@
 	// height: 90px;
 	padding: 10px;
 	border-radius: 20px;
+	transition: 0.3s;
+	font-weight: bold;
+	&:hover{
+		background-color: $color-cartBlue;
+		color: $color-paste;
+		transition: 0.3s;
+	}
 }

@@ -190,3 +190,54 @@
 	margin: 0;
 	margin-top: 15px;
 }
+.registerSucess{
+	position: absolute;
+	transition: 0.4s;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: $font-roboto;
+	// margin: 0 auto;
+	cursor: pointer;
+	padding: 15px 45px 30px 45px;
+	border: 1px solid $color-lightGreen;
+	border-radius: 10px;
+	width: fit-content;
+	background-color: $color-cartGreen;
+	color: $color-title;
+	box-shadow: -8px 5px 10px rgb(76, 56, 131);
+	&:hover{
+		color: $color-cartBlue;
+	}
+}
+.successIcon{
+	font-size: 25px;
+	margin-bottom: 5px;
+	color: green;
+}
+.loginFailed{
+	font-family: $font-roboto;
+	cursor: default;
+	// text-align: center;
+	margin: 0 auto 20px auto;
+	padding: 15px 45px;
+	border: 1px solid $color-lightGreen;
+	border-radius: 10px;
+	width: fit-content;
+	// background-color: rgb(255, 181, 181);
+	// background-color: rgba(255, 71, 71, 0.5);
+	box-shadow: -8px 5px 10px rgb(76, 56, 131);
+}
+.warning{
+	background-color: rgb(255, 181, 181);
+	color: $color-title;
+}
+.failIcon{
+	color: rgb(206, 61, 61);
+	font-size: 25px;
+}
+.notificationCloseBtn{
+	text-align: right;
+	color: black;
+	font-size: 22px;
+}

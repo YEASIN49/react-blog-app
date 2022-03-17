@@ -4,7 +4,7 @@ import CategoryCard from "../components/categoryCard";
 import '../css/category.css';
 // import thumbnail from '../images/thumbnail.jpeg';
 
-const Category = () => {
+const Category = (props) => {
 	const [allCategory, setAllCategory] = useState([]);
 
 	useEffect(() => {
@@ -28,6 +28,7 @@ const Category = () => {
 							<CategoryCard
 								key={category._id}
 								category={category.name}
+								click={props.click}
 							/>
 						))}
 						{/*

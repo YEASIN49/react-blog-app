@@ -33,6 +33,20 @@
 .postContainer {
   border-radius: 20px;
   font-family: "Roboto", sans-serif;
+  outline: 1px solid rgba(128, 128, 128, 0.301);
+  -webkit-box-shadow: 0px 3px 5px  #c0c0b0;
+          box-shadow: 0px 3px 5px  #c0c0b0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  overflow: hidden;
+  cursor: default;
+}
+
+.postContainer:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .postDescription {
@@ -41,18 +55,39 @@
 
 .postCategory {
   display: inline-block;
-  color: rebeccapurple;
+  color: gray;
   font-size: 12px;
   font-weight: bold;
-  background-color: #5CDB94;
+  border: 1px solid gray;
   border-radius: 20px;
-  padding: 1px 5px;
+  padding: 1px 8px;
   margin-right: 5px;
   margin-bottom: 5px;
 }
 
 .postTitle {
   padding: 5px 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+@media (min-width: 480px) {
+  .postTitle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 120px;
+  }
+}
+
+@media (min-width: 991px) {
+  .postTitle {
+    height: 80px;
+  }
 }
 
 .authorInfoContainer {
@@ -89,9 +124,24 @@
 }
 
 .postShortDescription {
-  font-family: "Varela Round", sans-serif;
+  font-family: "Poppins", sans-serif;
   letter-spacing: 0.001em;
-  font-size: 15px;
+  font-size: 13.5px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+@media (min-width: 480px) {
+  .postShortDescription {
+    height: 120px;
+  }
+}
+
+@media (min-width: 991px) {
+  .postShortDescription {
+    height: 100px;
+  }
 }
 
 .readMoreLink {
@@ -100,11 +150,22 @@
 }
 
 .readButton {
-  border: 2px solid #45456b;
+  background-color: #05396B;
+  color: #FFFFFF;
   text-align: center;
   display: block;
   width: 180px;
   margin: 15px auto 0 auto;
   padding: 10px;
   border-radius: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.readButton:hover {
+  background-color: #5B4EBB;
+  color: #DFF6E6;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }

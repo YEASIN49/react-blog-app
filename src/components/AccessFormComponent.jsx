@@ -2,14 +2,11 @@ import React, { useContext, useEffect, useRef, useState  } from "react";
 import '../css/accessFormComponent.css'
 import sectionImage from '../images/2.png'
 import { HiLightBulb } from "react-icons/hi";
-import { GiThink } from "react-icons/gi"
 import { GiPlantSeed } from "react-icons/gi"
-import { GiRead } from "react-icons/gi"
-import { GiPencil } from "react-icons/gi"
 import axios from "axios";
 import { Context } from "../Context/Context";
 import { useLocation, useNavigate, Link } from "react-router-dom";
-
+import {MdTaskAlt, MdDangerous,MdOutlineClose} from "react-icons/md";
 
 
 const AccessFormComponent = () => {
@@ -17,25 +14,37 @@ const AccessFormComponent = () => {
 	const [userEmail, setUserEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [isRegisterred, setIsRegisterred] = useState(false);
+	const [accessError, setAccessError] = useState(false);
+	const [registrationError, setRegistrationError] = useState(false);
 	const [showLogin, setShowLogin] = useState(false);
 	const linkParams = useLocation();
 	const { renderLoginForm }  = linkParams.state;
 	const navigate = useNavigate();
+
 	// const redirectByNavigation = navigation
 	// 
 	const emailRef = useRef();
 	const passwordRef = useRef();
+	const registerNameRef = useRef();
+	const registerEmailRef = useRef();
+	const registerPassRef = useRef();
 	const {dispatch, isFetching} = useContext(Context);
+
 
 
 
 // LOGIN STATUS UPDATER
 	useEffect(()=>{
-			setShowLogin((prevState)=> prevState = renderLoginForm);
-		
-		console.log(showLogin);
-		console.log(renderLoginForm);
+		setShowLogin((prevState)=> prevState = renderLoginForm);
+
 	},[renderLoginForm]);
+
+	const accessErrorhandler = (value) => {
+	setAccessError((prevState)=> prevState = value)
+	}
+	const registrationErrorHandler = (value) => {
+	setRegistrationError((prevState)=> prevState = value)
+	}
 // Successfull register effect
 // useEffect(()=>{
 	// console.log("ENTERED ACCESS FORM COMPONENT EFFECT HOOK")
@@ -59,16 +68,24 @@ const AccessFormComponent = () => {
 			});
 		
 			
-			setIsRegisterred((prevState)=> prevState = true)
+			setIsRegisterred((prevState)=> prevState = true);
+			registrationErrorHandler(false);
+			// setAccessError((prevState)=> prevState = false);
+			if(registerNameRef.current || registerEmailRef.current || registerPassRef.current.value){
+				registerNameRef.current.value = "" 
+				registerEmailRef.current.value = "" ;
+				registerPassRef.current.value = "" ;
+			}
 			
-
+			// navigate("/userAccess");
 		} catch (error) {
 			console.log(error);
+			registrationErrorHandler(true);
 		}
 	}
 
 
-// LOGIN SUBMIT HANDLER
+	// LOGIN SUBMIT HANDLER
 	const handleLoginSubmit = async (event) => {
 		event.preventDefault();
 		dispatch({type: "LOGIN_START"});
@@ -84,9 +101,11 @@ const AccessFormComponent = () => {
 					type: "LOGIN_SUCCESS",
 					payload: response.data
 			})
+			accessErrorhandler(false);
 			navigate("/");
 		} catch (error) {
 			dispatch({type: "LOGIN_FAILED"});
+			accessErrorhandler(true);
 		}
 	}
 	// console.log(isFetching);
@@ -100,6 +119,15 @@ const AccessFormComponent = () => {
 				{/* LOGIN */ }
 				 {showLogin ?  
 					<div id="loginForm" className="formContainer">
+						{/* LOGIN FAILURE NOTIFICATION */}
+						{accessError ? 
+							<div className='navLinks loginFailed warning'>
+								{/* < MdTaskAlt className="successIcon" /> */}
+								<p>email or password is wrong</p>
+							</div>
+							:
+							""
+						}
 					<form className="accessForm" onSubmit={handleLoginSubmit}>
 						<h2 className="formTitle">Login <span>Your Account</span></h2>
 						<label className="inputLabel" htmlFor="userEmail">Email</label>
@@ -112,16 +140,30 @@ const AccessFormComponent = () => {
 								state= {{renderLoginForm: false}}
 						>
 						<button className="createAccountButton">Create New Account</button>
+						{/* Success erro notification */}
+						
 					</Link>
 				</div> 
 				: 
 				/* REGISTER */
 					<div id="registerForm" className="formContainer">
+						{
+							registrationError ? 
+								<div className='navLinks registerSucess warning'>
+									<p onClick={() => registrationErrorHandler(false)} className="notificationCloseBtn">< MdOutlineClose /></p>
+									< MdDangerous className="failIcon" />
+									<p>Registration Failed</p>
+									<p>Try another email and username</p>
+								</div>
+								:
+								""
+						}
 						<form className="accessForm" onSubmit={handleRegisterSubmit}>
 							<h2 className="formTitle">Register <span>Your Account</span></h2>
 							<label className="inputLabel" htmlFor="userName">Name</label>
 							<input 
-								onChange={(event)=>(
+								ref={registerNameRef}
+								onChange={(event)=>( //this also can be done only by using ref
 									setUsername((prevState) => (prevState = event.target.value))
 									)
 									}
@@ -129,7 +171,8 @@ const AccessFormComponent = () => {
 
 							<label className="inputLabel" htmlFor="userEmail">Email</label>
 							<input 
-								onChange={(event)=>(
+								ref={registerEmailRef}
+								onChange={(event)=>( //this also can be done only by using ref
 									setUserEmail((prevState) => (prevState = event.target.value))
 									)
 									}
@@ -137,7 +180,8 @@ const AccessFormComponent = () => {
 
 							<label className="inputLabel" htmlFor="userPassword">Password</label>
 							<input 
-								onChange={(event)=>(
+								ref={registerPassRef}
+								onChange={(event)=>( //this also can be done only by using ref
 									setPassword((prevState) => (prevState = event.target.value))
 									)
 									}
@@ -154,9 +198,13 @@ const AccessFormComponent = () => {
 							<Link to={'/userAccess'}
 								state= {{ renderLoginForm: true}}
 							>	
-								<div href='' className='navLinks iconLink'>LOGIN</div>
+								<div className='navLinks registerSucess'>
+									< MdTaskAlt className="successIcon" />
+									<p>Registered Successfull. You Can Login Now</p>
+									<p>Click to Login</p> 
+								</div>
+								
 							</Link>
-							// <p>Register Successfull </p> 
 							: null
 						}
 					</div>

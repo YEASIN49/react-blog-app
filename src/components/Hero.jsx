@@ -45,9 +45,9 @@ export default function Hero() {
 				<span className="headerTitleLg outlined">THE MORE YOU REVIEW</span>
 				<br />
 				<span className="headerTitleLg">THE MORE THEY LEARN</span>
-				<span className="headerDetail">An online blogging platform for tech enthusiast around the world. Post, Comment, Vote to let others know the effectiveness of your writing and knowledge.</span>
+				<span className="headerDetail">An online review platform for tech enthusiast around the world. Post, Comment, Vote to let others know the effectiveness of your writing and knowledge.</span>
 				{/* <Link to='/#allPostSection'> */}
-					<span className="headerCTAButton"><a href="#allPostSection" >See Reviews...</a></span>
+					<span className="headerCTAButton"><a href="#allPostSection" >See Articles...</a></span>
 				{/* </Link> */}
 			</div>
 			<img

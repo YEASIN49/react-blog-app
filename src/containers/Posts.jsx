@@ -11,12 +11,12 @@ const Posts = (props) => {
 	
 	
 	return (
-		<div id="allPostSection" className="allPostWrapper">
+		<div ref={props.referenceProp} id="allPostSection" className="allPostWrapper">
 			<h1 className="sectionTitle">All Articles</h1>
 			<div className="allPostContainer">
 				{fetchedPost.map((post) => (
 					<Post
-						bgColor={partialVariable.colorCartPink}
+						bgColor={partialVariable.colorLightOrange}
 						postContent={post}
 						key={post._id}
 					/>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Hero from '../components/Hero';
 import Posts from '../containers/Posts'
 import Category from '../containers/Category'
@@ -7,10 +7,17 @@ import { useLocation } from 'react-router-dom';
 import axios from "axios";
 
 
-export default function Homepage() {
+export default function Homepage(props) {
 
 	const [allPost, setAllPost] = useState([]);
 	const querySearch = useLocation().search;
+	const postSectionRef = useRef();
+
+	const scrollToComponent = (ref) => window.scrollTo({
+		left: 0, 
+		top: ref.current.offsetTop,
+		behavior: 'smooth'
+	  });
 
 	const publicImage = "http://localhost:5000/images/";
 
@@ -24,10 +31,10 @@ export default function Homepage() {
 	}, [querySearch]);
 
 	return (
-		<div>
+		<div ref={props.referenceProp}>
 			<Hero />
-			<Category />
-			<Posts allPost={allPost} />
+			<Category click={() => scrollToComponent(postSectionRef)}/>
+			<Posts allPost={allPost} referenceProp={postSectionRef}/>
 		</div>
 	);
 }

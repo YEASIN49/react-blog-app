@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import Navbar from "./components/Navbar";
 import Article from './pages/Article';
 import ArticleCreation from './pages/ArticleCreation';
@@ -16,22 +16,30 @@ import { Context } from './Context/Context';
 
 function App() {
 
-  const [isBurgerBtnOpen, setIsBurgerBtnOpen] = useState(false);
-  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
+  // const [isBurgerBtnOpen, setIsBurgerBtnOpen] = useState(false);
+  // const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [accessFormComponentOpener, setAccessFormComponentOpener] = useState(null);
 
   // CONTEXT_API DATA
   const {user} = useContext(Context);
+  const homePageRef = useRef();
+  
 
-  const toggleBurgerBtn = () => {
-    const burgerButtonPrevState = isBurgerBtnOpen;
-    setIsBurgerBtnOpen(!burgerButtonPrevState);
-  }
-  const toggleSearchModal = (e) => {
-    e.preventDefault();
-    const searchModalPrevState = isSearchModalOpen;
-    setIsSearchModalOpen(!searchModalPrevState);
-  }
+  const scrollToComponent = (ref) => window.scrollTo({
+	  left: 0, 
+	  top: ref.current ? ref.current.offsetTop: null,
+	  behavior: 'smooth'
+	});
+
+  // const toggleBurgerBtn = () => {
+  //   const burgerButtonPrevState = isBurgerBtnOpen;
+  //   setIsBurgerBtnOpen(!burgerButtonPrevState);
+  // }
+  // const toggleSearchModal = (e) => {
+  //   e.preventDefault();
+  //   const searchModalPrevState = isSearchModalOpen;
+  //   setIsSearchModalOpen(!searchModalPrevState);
+  // }
   const toggleAccessFormComponent = () => {
 
   }
@@ -39,18 +47,20 @@ function App() {
   return (
     <Router>
       <Navbar
-        isBurgerBtnOpen={isBurgerBtnOpen}
-        isSearchModalOpen={isSearchModalOpen}
-        toggleSearchModal={toggleSearchModal}
-        toggleBurgerBtn={toggleBurgerBtn}
+        // isBurgerBtnOpen={isBurgerBtnOpen}
+        // isSearchModalOpen={isSearchModalOpen}
+        // toggleSearchModal={toggleSearchModal}
+        // toggleBurgerBtn={toggleBurgerBtn}
+        clickToJump={()=>scrollToComponent(homePageRef)}
       />
-      <ScrollToTop>
+        
+        {/*  */}
         <Routes>
-          <Route exact path='/' element={<Homepage />} />
-          <Route exact path='/article/:postID' element={<Article />} />
+          <Route exact path='/' element={<Homepage referenceProp={homePageRef}/>} />
           <Route exact path='/createArticle' element={<ArticleCreation />} />
           <Route exact path='/updateProfile' element={<ProfileUpdate />} />
           <Route exact path='/userAccess' element={<AccessAccount />} />
+          <Route exact path='/article/:postID' element={<Article />} />
           <Route
             path="*" 
             element={
@@ -60,8 +70,12 @@ function App() {
             }
         />
         </Routes>
-      </ScrollToTop>
+        {/* <ScrollToTop>
+          <Routes>
+          </Routes>
+        </ScrollToTop> */}
     </Router>
+    
   );
 }
 

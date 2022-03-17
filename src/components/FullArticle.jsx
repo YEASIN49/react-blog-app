@@ -10,9 +10,6 @@ import  {Context}  from '../Context/Context';
 const FullArticle = (props) => {
 
 	const {user} = useContext(Context);
-	
-	console.log("outside useeffect")
-	console.log(props)
 
 	const [postData, setPostData] = useState("");
 	const publicImage = "http://localhost:5000/images/";
@@ -22,8 +19,13 @@ const FullArticle = (props) => {
 			const response = await axios.get(`/posts/${postId}`);
 			
 			setPostData((prevState) => prevState = response.data);
+			
 		}
 		fetchPostData(props.postId);
+		window.scrollTo({
+			top: 0, 
+			behavior: 'smooth'
+		})
 	}, []);
 	
 	const deletePostHandler = async () => {
@@ -40,7 +42,7 @@ const FullArticle = (props) => {
 	
 
 	return (
-		<div className='fullArticleWrapper'>
+		<div id='fullArticle' className='fullArticleWrapper'>
 			<div className='fullArticleContainer'>
 				<div className='fullArticleBody'>
 					<h1 className='articleTitle'>{postData.title}</h1>
